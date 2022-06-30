@@ -147,7 +147,7 @@ export default function GithubUsers(): any {
       ) : loading ? (
         <div id="loading-spinner"></div>
       ) : (
-        <p>Please enter some text</p>
+        <p>Please enter some (good) text</p>
       )}
     </div>
   );
