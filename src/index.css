@@ -1,13 +1,62 @@
+/*------------------------------------------------------------------
+[Table of contents]
+
+1. HTML, BODY and ROOT / html, body, #root 
+2. [card-[index] / #card-[index]
+3. Form input / form input
+4. Loading spinner / #loading-spinner 
+5. Error / p#error
+6. Keyframe animation spinner / @keyframe
+7. First child of list user repos  info / .user-info ul#repos li:first-child 
+8. Item of list user info / .user-info ul li]
+9. First child of list user / .user-info ul li:first-child
+10. Strong of list item / .user-info ul li strong
+11. Link repo / .repo-link
+12. Media query  / @media screen and (max-width: 780px)
+13. Media query  / @media screen and (max-width: 660px)
+14. Media query  / @media screen and (max-width: 480px)
+
+
+-------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+[1. HTML, BODY and ROOT / html, body, #root ]
+*/
+
+html,
+body,
+#root {
+  height: calc(100 * var(--vh));
+}
+
+/*------------------------------------------------------------------
+[2. Body / body ]
+*/
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: "NeutralFace";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/*------------------------------------------------------------------
+[3. Font Face Neutral Face / @font-face  ]
+*/
+
+@font-face {
+  font-family: "NeutralFace";
+  font-display: swap;
+  src: local("NeutralFace"), url("./fonts/NeutralFace.otf") format("opentype");
+}
+
+/*------------------------------------------------------------------
+[4. Font Face Neutral Face Bold/ @font-face  ]
+*/
+
+@font-face {
+  font-family: "NeutralFace-Bold";
+  font-display: swap;
+  src: local("NeutralFace-Bold"),
+    url("./fonts/NeutralFace-Bold.otf") format("opentype");
 }

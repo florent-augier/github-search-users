@@ -1,0 +1,247 @@
+/*------------------------------------------------------------------
+[Table of contents]
+
+1. Wrapper user component / .card
+2. [card-[index] / #card-[index]
+3. Form input / form input
+4. Loading spinner / #loading-spinner 
+5. Error / p#error
+6. Keyframe animation spinner / @keyframe
+7. First child of list user repos  info / .user-info ul#repos li:first-child 
+8. Item of list user info / .user-info ul li]
+9. First child of list user / .user-info ul li:first-child
+10. Strong of list item / .user-info ul li strong
+11. Link repo / .repo-link
+12. Media query  / @media screen and (max-width: 780px)
+13. Media query  / @media screen and (max-width: 660px)
+14. Media query  / @media screen and (max-width: 480px)
+
+
+-------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+[1. Wrapper github user component / #github-users]
+*/
+
+.card {
+  max-width: 800px;
+  min-width: 440px;
+  background-color: #fff;
+  color: #000;
+  padding: 3em;
+  display: flex;
+  border-radius: 20px;
+  margin: 2em 1.5em;
+  font-size: 16px;
+  -webkit-box-shadow: 5px 5px 15px 5px #000000;
+  box-shadow: 5px 5px 15px 5px #000000;
+}
+
+/*--------------------------BEGIN----------------------------------------
+[2. [card-[index] / #card-[index]]
+*/
+#card-1 {
+  background-color: #f4d03f;
+  background-image: linear-gradient(132deg, #f4d03f 0%, #16a085 100%);
+}
+
+#card-2 {
+  background-color: #74ebd5;
+  background-image: linear-gradient(90deg, #74ebd5 0%, #9face6 100%);
+}
+#card-3 {
+  background-color: #d9afd9;
+  background-image: linear-gradient(0deg, #d9afd9 0%, #97d9e1 100%);
+}
+#card-4 {
+  background-color: #ff3cac;
+  background-image: linear-gradient(
+    225deg,
+    #ff3cac 0%,
+    #784ba0 50%,
+    #2b86c5 100%
+  );
+}
+
+#card-5 {
+  background-color: #fa8bff;
+  background-image: linear-gradient(
+    45deg,
+    #fa8bff 0%,
+    #2bd2ff 52%,
+    #2bff88 90%
+  );
+}
+#card-6 {
+  background-color: #85ffbd;
+  background-image: linear-gradient(45deg, #85ffbd 0%, #fffb7d 100%);
+}
+#card-7 {
+  background-color: #08aeea;
+  background-image: linear-gradient(0deg, #08aeea 0%, #2af598 100%);
+}
+#card-8 {
+  background-color: #fbda61;
+  background-image: linear-gradient(45deg, #fbda61 0%, #ff5acd 100%);
+}
+#card-9 {
+  background-color: #85ffbd;
+  background-image: linear-gradient(45deg, #85ffbd 0%, #fffb7d 100%);
+}
+#card-10 {
+  background-color: #fa8bff;
+  background-image: linear-gradient(
+    45deg,
+    #fa8bff 0%,
+    #2bd2ff 52%,
+    #2bff88 90%
+  );
+}
+
+/*--------------------------END----------------------------------------
+[2. [card-[index] / #card-[index]]
+*/
+
+/*------------------------------------------------------------------
+[3. Avatar user / .avatar]
+*/
+
+.avatar {
+  border-radius: 50%;
+  border: none;
+  box-shadow: 1px 2px 5px #000;
+  height: 150px;
+  width: 150px;
+  margin-top: 1.5em;
+}
+
+/*------------------------------------------------------------------
+[4. User info text / .user-info]
+*/
+
+.user-info {
+  margin-left: 2em;
+}
+
+/*------------------------------------------------------------------
+[5. List / ul]
+*/
+
+ul {
+  list-style: none;
+}
+
+/*------------------------------------------------------------------
+[6. User info list / .user-info ul]
+*/
+
+.user-info ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  max-width: 400px;
+  flex-wrap: wrap;
+}
+
+/*------------------------------------------------------------------
+[7. First child of list user repos  info / .user-info ul#repos li:first-child ]
+*/
+
+.user-info ul#repos li:first-child {
+  margin-left: 0.7em;
+}
+
+/*------------------------------------------------------------------
+[8. Item of list user info / .user-info ul li]
+*/
+
+.user-info ul li {
+  display: inline-block;
+  align-items: center;
+  margin-left: 0.7em;
+  font-weight: 600;
+  color: hotpink;
+}
+
+/*------------------------------------------------------------------
+[9. First child of list user / .user-info ul li:first-child]
+*/
+
+.user-info ul li:first-child {
+  margin: 0;
+}
+
+/*------------------------------------------------------------------
+[10. Strong of list item / .user-info ul li strong]
+*/
+
+.user-info ul li strong {
+  font-size: 0.9em;
+  margin-left: 0.5em;
+  font-weight: 600;
+  color: darkblue;
+}
+
+/*------------------------------------------------------------------
+[11. Link repo / .repo-link]
+*/
+
+.repo-link {
+  text-decoration: none;
+  background-color: darkblue;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.8em;
+  padding: 0.25em 0.6em;
+  margin-right: 0.5em;
+  margin-bottom: 0.5em;
+  display: inline-block;
+}
+
+/*------------------------------------------------------------------
+[12. Media query  / @media screen and (max-width: 780px)]
+*/
+
+@media screen and (max-width: 780px) {
+  .card {
+    max-width: 600px;
+    min-width: 320px;
+    padding: 2em;
+    font-size: 14px;
+  }
+}
+
+/*------------------------------------------------------------------
+[13. Media query  / @media screen and (max-width: 660px)]
+*/
+
+@media (max-width: 660px) {
+  .card {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .avatar {
+    margin: 0;
+    margin-bottom: 1.5em;
+  }
+
+  .user-info h2 {
+    text-align: center;
+  }
+}
+
+/*------------------------------------------------------------------
+[14. Media query  / @media screen and (max-width: 480px)]
+*/
+
+@media screen and (max-width: 480px) {
+  .card {
+    max-width: 260px;
+    min-width: 160px;
+  }
+  .user-info {
+    margin: 12px;
+  }
+}

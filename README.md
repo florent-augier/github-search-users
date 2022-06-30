@@ -1,46 +1,62 @@
-# Getting Started with Create React App
+# Search github users app
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a little basic search user app showing how to manage a list of github users throught the power of [React](https://github.com/facebook/create-react-app)
 
-## Available Scripts
+If you want to go to the app directly, go to the [Search Github Users App]().
 
-In the project directory, you can run:
+## Table of contents
 
-### `npm start`
+1. [Instructions](#instructions)
+2. [Approach](#approach)
+3. [Code](#code)
+4. [Improvements](#improvements)
+5. [Conclusion](#conclusion)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Instructions
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Create a search input text where users can type in and get results straight away, without ENTER keypress or submit button required.
+Results will list Github users as a list. It is up to you to define which data about Github users is relevant to display.
 
-### `npm test`
+1. Query against Github Api: GET https://api.github.com/search/users?q={USER}.
+2. Try to not add any dependency library on a freshly created
+   [create react app](https://github.com/facebook/create-react-app).
+3. Don't forget to check against modern ways to make HTTP requests on frontend side.
+4. Bonus: manage edge cases (no results, Github api rate limit, user type in quickly and going back and forth on his search)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+### Approach
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+When I write some code with **React**, I think that all `html` things can be component. Just because component can be reusable anytime as we want.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The benefit of React is to be able to manage the state of components very easily.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+In addition, the JSX syntax makes it easy to couple HTML and JavaScript code.
 
-### `npm run eject`
+In this way we save a lot of time and make our code lighter and more readable.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Code
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+In first, I create a simple user component with his properties using Typescript @interface to check the props and their types.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+The interface
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```javascript
+interface UserProps {
+  label: string;
+  defaultChecked?: boolean;
+  checked: boolean;
+  toggleStateInput(myKey: number): void;
+  myKey: number;
+  children?: JSX.Element | JSX.Element[];
+}
 
-## Learn More
+### Improvements
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+I can optimize tha accessibilty by manage focus input state.
+The app can be splitted more and more. Like `<Input />, <Label/> and their text with <Text /> custom component.`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+It is not my choice. But if the app grow, I must create litte reusable components.
+
+## Conclusion
+
+It's a very good exercise to manage state in React and it's fun to do this.

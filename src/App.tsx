@@ -1,24 +1,54 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, createContext, useState } from "react";
+import "./App.css";
+import GithubUsers from "./github-users/GithubUsers";
+
+interface ErrorContextInterface {
+  isError: boolean;
+  toggleError?: () => void;
+}
+
+const defaultState = {
+  isError: false,
+};
+
+export const ErrorContext =
+  createContext<Partial<ErrorContextInterface> | null>(defaultState);
 
 function App() {
+  const [
+    /**
+     * @type {isError}
+     */
+    isError,
+    /**
+     * @type {setIsError}
+     */
+    setIsError,
+  ] = useState<boolean | undefined>(defaultState.isError);
+
+  useEffect(() => {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty("--vh", `${vh}px`);
+  });
+
+  const toggleError = (errorParam?: boolean) => {
+    if (errorParam) {
+      setIsError(errorParam);
+    } else {
+      setIsError(!isError);
+    }
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ErrorContext.Provider
+        value={{
+          isError: isError,
+          toggleError: toggleError,
+        }}
+      >
+        <GithubUsers />
+      </ErrorContext.Provider>
     </div>
   );
 }

@@ -1,38 +1,26 @@
+/*------------------------------------------------------------------
+[Table of contents]
+
+1. Wrapper App / .App 
+2. Link / a
+
+-------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+[1. Wrapper github user component / #github-users]
+*/
+
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
+  min-height: calc(100 * var(--vh));
   background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
+/*------------------------------------------------------------------
+[2. Link / a]
+*/
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+a {
+  color: darkblue;
 }
